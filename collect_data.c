@@ -4,19 +4,16 @@
 
 #define NO_OF_VALUES 8
 
-char *commands[NO_OF_VALUES];
-char *error_msg[NO_OF_VALUES];
+char *commands[NO_OF_VALUES], *error_msg[NO_OF_VALUES];
 
 void read_commands(FILE *command_list)
 {
      command_list = fopen("commands.txt","r");
      char cmd[100]={'\0'}, desc[100]={'\0'};
-     int i=0;
+     int i=0, loop;;
      
-     while(1)
+     for(loop=0; loop<NO_OF_VALUES; loop++)
      {
-	  if(feof(command_list))
-	       break;
 	  fgets(cmd,500,command_list);
 	  fgets(desc,500,command_list);
 	  

@@ -1,6 +1,6 @@
 df -m | grep "^\/dev\/" | awk '{print $(5)}' | sed s/%//
 Could not obtain hard disk usage data. Exiting...
-vmstat | awk '{print  $(NF-1)}' | sed '1,2d'
+vmstat | awk '{print  $(15)}' | sed '1,2d'
 Could not obtain processor usage data. Exiting..
 vmstat | awk '{print  $(4)}' | sed '1,2d'
 Could not obtain memory usage data. Exiting..

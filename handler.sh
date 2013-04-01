@@ -7,6 +7,7 @@
 touch output
 touch output1
 touch ind
+gcc collect_data.c > collector.out
 echo "" > output
 echo "" > output1
 
@@ -39,4 +40,5 @@ do
     max_len=`cat output1 | wc -l`
     diff_line=`diff --suppress-common-lines output output1 | grep "<.*$"`
     tail -n +$((max_len + 1 - diff_len)) output1 > output
+    ./collector.out >> output
 done
