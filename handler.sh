@@ -34,7 +34,7 @@ do
     lttng enable-event -a -k
     lttng start
     lttng stop $((1-i))
-    lttng view > output1
+    lttng view $((1-i)) > output1
     lttng destroy $((1-i))
     #calculate the diff and find common k lines
     max_len=`cat output1 | wc -l`
